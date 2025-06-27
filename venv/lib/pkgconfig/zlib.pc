@@ -1,0 +1,13 @@
+prefix=/home/deathwish/Code/MLProject/venv
+exec_prefix=/home/deathwish/Code/MLProject/venv
+libdir=/home/deathwish/Code/MLProject/venv/lib
+sharedlibdir=/home/deathwish/Code/MLProject/venv/lib
+includedir=/home/deathwish/Code/MLProject/venv/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
