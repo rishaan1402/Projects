@@ -1,0 +1,59 @@
+[ 2025-07-03 16:56:19,343  256 root - INFO - Starting complete ML pipeline
+[ 2025-07-03 16:56:19,343  23 root - INFO - Data ingestion process started
+[ 2025-07-03 16:56:19,343  31 root - INFO - Loading data from URL: https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data
+[ 2025-07-03 16:56:24,851  34 root - INFO - Data loaded successfully with shape: (32561, 15)
+[ 2025-07-03 16:56:24,851  42 root - INFO - Column names assigned successfully
+[ 2025-07-03 16:56:24,869  46 root - INFO - Missing values marked as NaN
+[ 2025-07-03 16:56:24,881  51 root - INFO - Dropped missing values. Shape changed from (32561, 15) to (30162, 15)
+[ 2025-07-03 16:56:24,985  55 root - INFO - Raw data saved to artifacts/raw_data.csv
+[ 2025-07-03 16:56:24,986  58 root - INFO - Splitting data into train and test sets
+[ 2025-07-03 16:56:25,110  70 root - INFO - Train set saved to artifacts/train.csv
+[ 2025-07-03 16:56:25,110  71 root - INFO - Test set saved to artifacts/test.csv
+[ 2025-07-03 16:56:25,110  72 root - INFO - Train set shape: (24129, 15), Test set shape: (6033, 15)
+[ 2025-07-03 16:56:25,110  74 root - INFO - Data ingestion completed successfully
+[ 2025-07-03 16:56:25,112  70 root - INFO - Starting data transformation process
+[ 2025-07-03 16:56:25,158  76 root - INFO - Train data shape: (24129, 15)
+[ 2025-07-03 16:56:25,158  77 root - INFO - Test data shape: (6033, 15)
+[ 2025-07-03 16:56:25,167  27 root - INFO - Creating data transformation pipeline
+[ 2025-07-03 16:56:25,167  49 root - INFO - Categorical columns: ['workclass', 'education', 'marital-status', 'occupation', 'relationship', 'race', 'sex', 'native-country']
+[ 2025-07-03 16:56:25,167  50 root - INFO - Numerical columns: ['age', 'fnlwgt', 'education-num', 'capital-gain', 'capital-loss', 'hours-per-week']
+[ 2025-07-03 16:56:25,167  58 root - INFO - Data transformation pipeline created successfully
+[ 2025-07-03 16:56:25,169  104 root - INFO - Applying preprocessing on training and test dataframes
+[ 2025-07-03 16:56:25,257  116 root - INFO - Transformed train features shape: (24129, 96)
+[ 2025-07-03 16:56:25,257  117 root - INFO - Transformed test features shape: (6033, 96)
+[ 2025-07-03 16:56:25,260  124 root - INFO - Encoded train target shape: (24129,)
+[ 2025-07-03 16:56:25,260  125 root - INFO - Encoded test target shape: (6033,)
+[ 2025-07-03 16:56:25,267  138 root - INFO - Final train array shape: (24129, 97)
+[ 2025-07-03 16:56:25,267  139 root - INFO - Final test array shape: (6033, 97)
+[ 2025-07-03 16:56:25,267  141 root - INFO - Preprocessing completed successfully
+[ 2025-07-03 16:56:25,267  152 root - INFO - Preprocessing object saved to artifacts/preprocessor.pkl
+[ 2025-07-03 16:56:25,268  55 root - INFO - Starting model training process
+[ 2025-07-03 16:56:25,268  65 root - INFO - Training data shape: (24129, 96)
+[ 2025-07-03 16:56:25,268  66 root - INFO - Test data shape: (6033, 96)
+[ 2025-07-03 16:56:25,268  67 root - INFO - Training target shape: (24129,)
+[ 2025-07-03 16:56:25,268  68 root - INFO - Test target shape: (6033,)
+[ 2025-07-03 16:56:25,269  74 root - INFO - After ravel - Training target shape: (24129,)
+[ 2025-07-03 16:56:25,269  75 root - INFO - After ravel - Test target shape: (6033,)
+[ 2025-07-03 16:56:25,269  99 root - INFO - Training and evaluating models
+[ 2025-07-03 16:56:25,269  103 root - INFO - Training Logistic Regression
+[ 2025-07-03 16:56:28,839  126 root - INFO - Logistic Regression - Accuracy: 0.8475, F1 Score: 0.6635
+[ 2025-07-03 16:56:28,839  103 root - INFO - Training K-Nearest Neighbors
+[ 2025-07-03 16:56:29,499  126 root - INFO - K-Nearest Neighbors - Accuracy: 0.8279, F1 Score: 0.6368
+[ 2025-07-03 16:56:29,499  103 root - INFO - Training Decision Tree
+[ 2025-07-03 16:56:29,732  126 root - INFO - Decision Tree - Accuracy: 0.8140, F1 Score: 0.6280
+[ 2025-07-03 16:56:29,732  103 root - INFO - Training Random Forest
+[ 2025-07-03 16:56:32,985  126 root - INFO - Random Forest - Accuracy: 0.8487, F1 Score: 0.6722
+[ 2025-07-03 16:56:32,985  103 root - INFO - Training XGBoost
+[ 2025-07-03 16:56:33,433  126 root - INFO - XGBoost - Accuracy: 0.8631, F1 Score: 0.7007
+[ 2025-07-03 16:56:33,434  103 root - INFO - Training SVM Linear
+[ 2025-07-03 16:59:14,763  126 root - INFO - SVM Linear - Accuracy: 0.8465, F1 Score: 0.6524
+[ 2025-07-03 16:59:14,763  103 root - INFO - Training SVM RBF
+[ 2025-07-03 17:01:58,531  126 root - INFO - SVM RBF - Accuracy: 0.8488, F1 Score: 0.6589
+[ 2025-07-03 17:01:58,532  103 root - INFO - Training Naive Bayes
+[ 2025-07-03 17:01:58,573  126 root - INFO - Naive Bayes - Accuracy: 0.5624, F1 Score: 0.5184
+[ 2025-07-03 17:01:58,573  103 root - INFO - Training MLP Neural Network
+[ 2025-07-03 17:02:00,732  126 root - INFO - MLP Neural Network - Accuracy: 0.8480, F1 Score: 0.6630
+[ 2025-07-03 17:02:00,732  142 root - INFO - Best model: XGBoost with F1 Score: 0.7007
+[ 2025-07-03 17:02:00,739  163 root - INFO - Best model saved to artifacts/model.pkl
+[ 2025-07-03 17:02:00,740  184 root - INFO - Model comparison report saved to artifacts/model_report.csv
+[ 2025-07-03 17:02:00,740  186 root - INFO - Model training completed successfully
