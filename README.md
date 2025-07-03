@@ -11,23 +11,7 @@ End-to-end ML pipeline from data ingestion to model evaluation
 Modular code architecture with reusable components
 
 Implementation of key algorithms including XGBoost, SVM, Naive Bayes, MLP, PCA, and K-Means
-📁 Directory Structure
-graphql
-Copy
-Edit
-mlalgos/
-│
-├── artifacts/              # Saved models, transformers, processed data
-├── data/                   # Raw and interim data
-├── notebooks/              # EDA and experimentation notebooks
-├── src/
-│   └── components/         # Modular scripts: ingestion, transformation, training
-├── venv/                   # Virtual environment (excluded in .gitignore)
-├── config.yaml             # Configuration file for pipeline parameters
-├── requirements.txt        # Project dependencies
-├── main.py                 # Pipeline execution entry point
-└── README.md               # Project documentation
-📂 Dataset
+
 Source: UCI Adult Dataset
 
 Records: ~32,000
